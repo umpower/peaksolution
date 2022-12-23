@@ -1,0 +1,78 @@
+<%- include("../partials/header"); %>
+
+<div class="container">
+    <div class="table-responsive">
+        <!--Table-->
+        <table class="table table-striped">
+
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th class="text-nowrap">S.No</th>
+                    <th class="text-nowrap">First Name</th>
+                    <th class="text-nowrap">Last Name</th>
+                    <th class="text-nowrap">Date Of Birth</th>
+                    <th class="text-nowrap">Gender</th>
+                    <th class="text-nowrap">Email</th>
+                    <th class="text-nowrap">Phone</th>
+                    <th class="text-nowrap">Operation</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody>
+                <% let x = 1 %>
+                <% students.forEach(function(student){ %>
+                <tr>
+                    <th><%= x++ %></th>
+                    <td><%= student.firstName %></td>
+                    <td><%= student.lastName %></td>
+                    <td><%= student.dateOfBirth %></td>
+                    <td><%= student.gender %></td>
+                    <td><%= student.email %></td>
+                    <td><%= student.phone %></td>
+                    <td>
+                        <div class="d-flex justify-content-between">
+                            <form
+                            action="/students/<%= student._id %>/edit"
+                            method="GET"
+                            style="display:inline;"
+                            >
+                                <input type="submit" class="btn btn-xs btn-warning p-0 m-0" value="Edit" style="width: 4em;">
+                            </form>
+
+                            <form
+                            action="/students/<%= student._id %>?_method=DELETE"
+                            method="POST"
+                            style="display:inline;"
+                            >
+                                <input type="submit" class="btn btn-xs btn-danger p-0 m-0" value="Delete" style="width: 4em;">
+                            </form>
+                        </div>
+                    </td>
+
+                    <!-- <td>
+                        <div class="d-flex justify-content-between">
+                            <div class="">
+                                <a href="/students/<%= student._id %>/edit" class="btn btn-xs btn-warning btn-block px-0">
+                                    Edit
+                                </a>
+                            </div>
+                            <div class="">
+                                <form action="/students/<%= student._id %>?_method=DELETE" method="POST" class="px-0">
+                                    <input type="submit" class="btn btn-xs btn-danger btn-block px-0" value="Delete">
+                                </form>
+                            </div>
+                        </div>
+                    </td> -->
+                </tr>
+                <% }); %>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>

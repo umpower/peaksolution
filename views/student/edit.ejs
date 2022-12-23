@@ -1,0 +1,76 @@
+<%- include("../partials/header"); %>
+
+<div class="container">
+    <div class="wrapper rounded bg-white">
+
+        <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+            <div class="container">
+                <div class="h3 text-center font-weight-bold">Edit Form</div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 mt-md-0 mt-3">
+                        <label>First Name</label>
+                        <input type="text" name="student[firstName]" value="<%= student.firstName %>" class="form-control" required="">
+                    </div>
+
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" name="student[lastName]" value="<%= student.lastName %>" class="form-control" required="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Date Of Birth</label>
+                        <input type="date" name="student[dateOfBirth]" value="<%= student.dateOfBirth %>" class="form-control" required="">
+                    </div>
+
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Gender</label>
+                        <div class="d-flex align-items-center mt-2">
+                            <label class="option">
+                                <input type="radio"  name="student[gender]" value="male"
+                                <% if(student.gender == "male"){ %>
+                                    checked="true"
+                                <% } %>
+                                >Male
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="option ms-4">
+                                <input type="radio"  name="student[gender]" value="female"
+                                <% if(student.gender == "female"){ %>
+                                    checked="true"
+                                <% } %>
+                                >Female
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="option ms-4">
+                                <input type="radio"  name="student[gender]" value="other"
+                                <% if(student.gender == "other"){ %>
+                                    checked="true"
+                                <% } %>
+                                >Other
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Email</label>
+                        <input type="email" name="student[email]" value="<%= student.email %>" class="form-control" required="">
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Phone Number</label>
+                        <input type="tel" name="student[phone]" value="<%= student.phone %>" class="form-control" required="">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-success mt-3">Update</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>

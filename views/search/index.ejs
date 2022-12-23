@@ -1,0 +1,25 @@
+<%- include("../partials/header.ejs"); %>
+
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <form action="#" method="POST" class="justify-content-center">
+            <input class="form-control" type="search" placeholder="Search by first name" aria-label="Search">
+            <br>
+            <div class=" my-md-2 my-3">
+                <label>Search By </label>
+                <select id="" required="">
+                    <option value="firstName" selected="true">First Name</option>
+                    <option value="lastName">Last Name</option>
+                    <option value="gender">Email</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                </select>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+
+<%- include("../partials/footer"); %>

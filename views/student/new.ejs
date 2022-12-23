@@ -1,0 +1,73 @@
+<%- include("../partials/header"); %>
+
+<div class="container">
+    <div class="wrapper rounded bg-white">
+
+
+        <form action="/students" method="POST">
+            <div class="container">
+                <div class="h3 text-center font-weight-bold">Registration Form</div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 mt-md-0 mt-3">
+                        <label>First Name</label>
+                        <input type="text" name="student[firstName]" class="form-control" required="">
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" name="student[lastName]" class="form-control" required="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Date Of Birth</label>
+                        <input type="date" name="student[dateOfBirth]" class="form-control" required="">
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Gender</label>
+                        <div class="d-flex align-items-center mt-2">
+                            <label class="option">
+                                <input type="radio"  name="student[gender]" value="male" checked>Male
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="option ms-4">
+                                <input type="radio"  name="student[gender]" value="female">Female
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="option ms-4">
+                                <input type="radio"  name="student[gender]" value="other">Other
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Email</label>
+                        <input type="email" name="student[email]" class="form-control" required="">
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Phone Number</label>
+                        <input type="tel" name="student[phone]" class="form-control" required="">
+                    </div>
+                </div>
+                <!-- <div class=" my-md-2 my-3">
+                    <label>Class</label>
+                    <select id="" required="">
+                        <option value="" selected="" hidden="">Choose Class</option>
+                        <option value="1st">1st</option>
+                        <option value="2nd">2nd</option>
+                        <option value="3rd">3rd</option>
+                        <option value="4th">4th</option>
+                        <option value="5th">5th</option>
+                    </select>
+                </div> -->
+
+                <br>
+                <button class="btn btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>
